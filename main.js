@@ -13,7 +13,7 @@ camera = document.getElementById("camera");
 Webcam.attach('#camera');
 
 function take_snapshot(){
-    webcam.snap(function(data_uri){
+    Webcam.snap(function(data_uri){
         document.getElementById("result").innerHTML = '<img id="captured_image" src="'+data_uri+'"/>';
     });
 }
@@ -41,36 +41,36 @@ function gotResult(error, results){
         Prediction_1 = results[0].label;
         Prediction_2 = results[1].label;
          
-        if(results[0].label == Amazing ){
+        if(results[0].label == "Amazing" ){
             document.getElementById("update_gesture").innerHTML = "&#128076;";
         }
-        if(results[0].label == Wave ){
+        if(results[0].label == "Wave" ){
             document.getElementById("update_gesture").innerHTML = "&#9995;";
         }
-        if(results[0].label == Victory ){
+        if(results[0].label == "Victory"){
             document.getElementById("update_gesture").innerHTML = "&#129304;";
         }
-        if(results[0].label == Best){
+        if(results[0].label == "Best"){
             document.getElementById("update_gesture").innerHTML = "&#128077;";
         }
-        if(results[0].label == Clap){
+        if(results[0].label == "Clap"){
             document.getElementById("update_gesture").innerHTML = "&#128079;";
         }
 
 
-        if(results[1].label == Amazing ){
+        if(results[1].label ==" Amazing" ){
             document.getElementById("update_gesture2").innerHTML = "&#128076;";
         }
-        if(results[1].label == Wave ){
+        if(results[1].label == "Wave" ){
             document.getElementById("update_gesture2").innerHTML = "&#9995;";
         }
-        if(results[1].label == Victory ){
+        if(results[1].label == "Victory"){
             document.getElementById("update_gesture2").innerHTML = "&#129304;";
         }
-        if(results[1].label == Best){
+        if(results[1].label == "Best"){
             document.getElementById("update_gesture2").innerHTML = "&#128077;";
         }
-        if(results[1].label == Clap){
+        if(results[1].label == "Clap"){
             document.getElementById("update_gesture2").innerHTML = "&#128079;";
         }
     }
